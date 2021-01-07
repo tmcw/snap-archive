@@ -76,7 +76,7 @@ async function load(ll, epoch) {
       zoomLevel: 16.253499159574062,
       tileSetId: {
         flavor: "default",
-        epoch: 1609974817000,
+        epoch,
         type: 1,
       },
       radiusMeters: 71.32103072756415,
@@ -94,7 +94,8 @@ async function getURLs() {
     })
     .json();
 
-  const epoch = ts.tileSetInfos.find((info) => info.id.type === "POI").id.epoch;
+  const epoch = ts.tileSetInfos.find((info) => info.id.type === "HEAT").id
+    .epoch;
   console.error(`Map epoch: ${epoch}`);
 
   let mp4s = [].concat(
